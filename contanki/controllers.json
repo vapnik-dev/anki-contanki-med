@@ -548,6 +548,30 @@
       "supported": true,
       "has_dpad": true
    },
+   "8BitDo Zero 2 (X Input)": {
+      "name": "8BitDo Zero 2 (X Input)",
+      "buttons": {
+         "0": "A",
+         "1": "B",
+         "3": "X",
+         "4": "Y",
+         "6": "Left Shoulder",
+         "7": "Right Shoulder",
+         "10": "Select",
+         "11": "Start",
+         "12": "D-Pad Up",
+         "13": "D-Pad Down",
+         "14": "D-Pad Left",
+         "9": "D-Pad Right"
+      },
+      "axis_buttons": {},
+      "axes": {},
+      "num_buttons": 15,
+      "num_axes": 4,
+      "has_stick": false,
+      "supported": true,
+      "has_dpad": true
+   },
    "8BitDo Zero (D Input)": {
       "name": "8BitDo Zero (D Input)",
       "buttons": {

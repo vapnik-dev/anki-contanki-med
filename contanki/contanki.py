@@ -240,12 +240,13 @@ class Contanki(AnkiWebView):
         elif (
             self.profile.controller.parent == "8BitDo Zero 2 (X Input)"
             and any(axes)
-            and not any(buttons[12:15])
+            and not any(buttons[12:15]) 
+            and not any(buttons[8:10])
         ):
-            buttons[11] = axes[1] < -0.5 or axes[3] < -0.5
-            buttons[12] = axes[1] > 0.5 or axes[3] > 0.5
-            buttons[13] = axes[0] < -0.5 or axes[2] < -0.5
-            buttons[14] = axes[0] > 0.5 or axes[2] > 0.5
+            buttons[12] = axes[1] < -0.5 or axes[3] < -0.5
+            buttons[13] = axes[1] > 0.5 or axes[3] > 0.5
+            buttons[14] = axes[0] < -0.5 or axes[2] < -0.5
+            buttons[9] = axes[0] > 0.5 or axes[2] > 0.5
 
     def handle_poll_in_config(
         self, axes: list[float], changed: list[tuple[int, bool]]
