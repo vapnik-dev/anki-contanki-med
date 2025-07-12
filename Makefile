@@ -6,7 +6,7 @@ all: contanki.ankiaddon
 	./.venv/bin/pip install --upgrade --pre aqt
 	./.venv/bin/pip install --upgrade black isort 
 
-lint:
+format:
 	./.venv/bin/black . 
 	./.venv/bin/isort . 
 
