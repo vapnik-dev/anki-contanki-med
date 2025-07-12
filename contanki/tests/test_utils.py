@@ -9,7 +9,10 @@ def test_get_file():
     assert get_file("does_not_exist") is None
     file = get_file("controller.js")
     assert file is not None
-    assert file.split("\n")[0] == "let polling, connected_index, indices, ready, mock_index;"
+    assert (
+        file.split("\n")[0]
+        == "let polling, connected_index, indices, ready, mock_index;"
+    )
     file = get_file("Joy-Con Left")
     assert file is not None
     assert file.split("\n")[1] == '    "name": "Joy-Con Left",'

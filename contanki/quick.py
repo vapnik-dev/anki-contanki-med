@@ -4,18 +4,18 @@ Quick select menu.
 
 from __future__ import annotations
 
-from math import atan, sin, cos, pi, tau, sqrt
+from math import atan, cos, pi, sin, sqrt, tau
 from typing import Any
 
-from aqt.theme import theme_manager
-from aqt.qt import Qt, QLabel, QRect, QPoint, QSize, QFont
 from aqt import mw as _mw
+from aqt.qt import QFont, QLabel, QPoint, QRect, QSize, Qt
+from aqt.theme import theme_manager
 
-from .funcs import get_config
-from .utils import State
-from .icons import get_button_icon
 from .actions import button_actions
 from .controller import Controller
+from .funcs import get_config
+from .icons import get_button_icon
+from .utils import State
 
 HALF_PI = pi / 2
 QUARTER_PI = pi / 4
@@ -107,9 +107,7 @@ class QuickSelectMenu:
         button = (
             "D-Pad"
             if not self.settings["Select with Stick"] or not controller.has_stick
-            else "Left Stick"
-            if controller.num_axes == 4
-            else "Stick"
+            else "Left Stick" if controller.num_axes == 4 else "Stick"
         )
         self.centre.setPixmap(
             get_button_icon(controller, button).scaled(

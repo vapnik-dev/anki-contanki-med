@@ -3,9 +3,9 @@
 import os
 
 from aqt import mw
-from .utils import user_profile_path, user_controllers_path
 
 from .contanki import Contanki
+from .utils import user_controllers_path, user_profile_path
 
 assert mw is not None
 
@@ -15,4 +15,4 @@ if not os.path.exists(user_profile_path):
 if not os.path.exists(user_controllers_path):
     os.mkdir(user_controllers_path)
 
-mw.contanki = Contanki(mw) # type: ignore
+mw.contanki = Contanki(mw)  # type: ignore

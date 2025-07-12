@@ -1,6 +1,7 @@
-from typing import Callable
-from traceback import format_list, extract_tb
 import sys
+from traceback import extract_tb, format_list
+from typing import Callable
+
 tests: dict[str, Callable] = {}
 
 
@@ -18,7 +19,8 @@ def run_tests():
         print("WARNING: assertions are not enabled, tests will not run")
         return
 
-    from . import test_controller, test_profile, test_utils, test_icons
+    from . import test_controller, test_icons, test_profile, test_utils
+
     passed = list()
     failed = list()
     for key, _test in tests.items():

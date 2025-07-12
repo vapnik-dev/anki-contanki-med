@@ -4,53 +4,32 @@ Contanki's configuration dialog and associated classes.
 
 from __future__ import annotations
 
-import os
 import json
+import os
 from functools import partial
 from typing import Any, Callable, Iterable, Type
 
 import requests
-
-from aqt import QIcon, QScrollArea, qconnect
-from aqt.qt import QTableWidget, QTableWidgetItem, QComboBox, QFormLayout, QHeaderView
-from aqt.qt import (
-    QDialog,
-    QWidget,
-    QPushButton,
-    QCheckBox,
-    QHBoxLayout,
-    QVBoxLayout,
-    QTabWidget,
-    QInputDialog,
-    QKeySequenceEdit,
-    QSpinBox,
-    QLabel,
-    QGridLayout,
-    QGroupBox,
-    Qt,
-    QKeySequence,
-    QLayout,
-    QSizePolicy,
-    QFileDialog,
-    QTextEdit,
-)
-from aqt.theme import theme_manager
-from aqt.utils import showInfo, getText, askUser
+from aqt import QIcon, QScrollArea
 from aqt import mw as _mw
+from aqt import qconnect
+from aqt.qt import (QCheckBox, QComboBox, QDialog, QFileDialog, QFormLayout,
+                    QGridLayout, QGroupBox, QHBoxLayout, QHeaderView,
+                    QInputDialog, QKeySequence, QKeySequenceEdit, QLabel,
+                    QLayout, QPushButton, QSizePolicy, QSpinBox, Qt,
+                    QTableWidget, QTableWidgetItem, QTabWidget, QTextEdit,
+                    QVBoxLayout, QWidget)
+from aqt.theme import theme_manager
+from aqt.utils import askUser, getText, showInfo
 
-from .controller import get_updated_controller_list, Controller, DEFAULT_CONTROLLERS
-from .funcs import get_config, get_debug_str
-from .profile import (
-    Profile,
-    create_profile,
-    delete_profile,
-    get_profile,
-    get_profile_list,
-    update_assigned_profiles,
-)
 from .actions import QUICK_SELECT_ACTIONS, STATE_ACTIONS
+from .controller import (DEFAULT_CONTROLLERS, Controller,
+                         get_updated_controller_list)
+from .funcs import get_config, get_debug_str
 from .icons import ButtonIcon, get_button_icon
-from .utils import State, slugify, user_files_path, dbg
+from .profile import (Profile, create_profile, delete_profile, get_profile,
+                      get_profile_list, update_assigned_profiles)
+from .utils import State, dbg, slugify, user_files_path
 
 assert _mw is not None
 mw = _mw

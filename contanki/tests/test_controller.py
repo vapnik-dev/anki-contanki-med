@@ -1,13 +1,9 @@
 # pylint: disable=missing-docstring
 
-from ..controller import (
-    BUTTON_ORDER,
-    Controller,
-    get_controller_list,
-    parse_controller_id,
-    identify_controller,
-)
+from ..controller import (BUTTON_ORDER, Controller, get_controller_list,
+                          identify_controller, parse_controller_id)
 from . import test
+
 
 @test
 def test_controller():
@@ -147,6 +143,7 @@ parent = "8BitDo Pro"
 0 = "Left Stick Left"
 1 = "Left Stick Right"
 """
+
 
 @test
 def test_to_from_toml():

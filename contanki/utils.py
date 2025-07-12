@@ -6,11 +6,11 @@ Provides utility functions.
 
 from __future__ import annotations
 
-import unicodedata
 import re
-from typing import Literal
-from os.path import join, dirname, abspath, exists
+import unicodedata
 from os import environ
+from os.path import abspath, dirname, exists, join
+from typing import Literal
 
 DEBUG = environ.get("DEBUG")
 

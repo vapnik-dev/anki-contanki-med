@@ -4,21 +4,14 @@ Overlays which appear when mod keys are pressed.
 
 from __future__ import annotations
 
-from aqt.qt import (
-    QVBoxLayout,
-    QWidget,
-    Qt,
-    QLabel,
-    QHBoxLayout,
-    QSizePolicy,
-    QFont,
-)
+from aqt.qt import (QFont, QHBoxLayout, QLabel, QSizePolicy, Qt, QVBoxLayout,
+                    QWidget)
 
-from .funcs import get_config, get_state
-from .utils import State
-from .profile import Profile
-from .icons import ButtonIcon
 from .controller import BUTTON_ORDER
+from .funcs import get_config, get_state
+from .icons import ButtonIcon
+from .profile import Profile
+from .utils import State
 
 
 # FIXME: Must be better way to do this

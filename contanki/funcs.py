@@ -4,23 +4,16 @@ from __future__ import annotations
 
 import re
 import subprocess
-from typing import Any, Callable
 from functools import partial
-from os.path import dirname, abspath
+from os.path import abspath, dirname
+from typing import Any, Callable
 
-from aqt.deckoptions import display_options_for_deck_id
-from aqt.qt import (
-    QCoreApplication,
-    QKeySequence,
-    QMouseEvent,
-    QEvent,
-    QPoint,
-    QPointF,
-    Qt,
-)
-from aqt.qt import QKeyEvent as QKE
-from aqt.utils import current_window, tooltip, supportText
 from anki.decks import DeckId
+from aqt.deckoptions import display_options_for_deck_id
+from aqt.qt import QCoreApplication, QEvent
+from aqt.qt import QKeyEvent as QKE
+from aqt.qt import QKeySequence, QMouseEvent, QPoint, QPointF, Qt
+from aqt.utils import current_window, supportText, tooltip
 
 try:
     from anki.utils import is_mac  # pylint: disable=import-outside-toplevel
@@ -31,9 +24,9 @@ try:
 except ImportError:
     is_win = False
 
-from .utils import State, dbg
-
 from aqt import mw as _mw
+
+from .utils import State, dbg
 
 assert _mw is not None
 mw = _mw
@@ -554,9 +547,11 @@ def zoom_in() -> None:
     """Zooms in the page."""
     mw.web.setZoomFactor(mw.web.zoomFactor() + 0.1)
 
+
 def zoom_out() -> None:
     """Zooms out the page."""
     mw.web.setZoomFactor(mw.web.zoomFactor() - 0.1)
+
 
 def reset_zoom() -> None:
     mw.web.setZoomFactor(1)

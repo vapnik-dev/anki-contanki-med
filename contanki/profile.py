@@ -6,26 +6,19 @@ purpose of saving."""
 # modules or Contanki modules other than mappings and utils.
 
 from __future__ import annotations
-from collections import defaultdict
 
-from copy import deepcopy
-import os
-from os.path import join, exists
 import json
-import stat
-from typing import Any
+import os
 import shutil
+import stat
+from collections import defaultdict
+from copy import deepcopy
+from os.path import exists, join
+from typing import Any
 
-from .utils import (
-    State,
-    dbg,
-    int_keys,
-    user_files_path,
-    user_profile_path,
-    default_profile_path,
-    slugify,
-)
 from .controller import Controller, get_updated_controller_list
+from .utils import (State, dbg, default_profile_path, int_keys, slugify,
+                    user_files_path, user_profile_path)
 
 
 class Profile:

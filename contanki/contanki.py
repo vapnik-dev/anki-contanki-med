@@ -2,36 +2,27 @@
 
 from __future__ import annotations
 
+from collections import defaultdict
 from functools import partial
 from typing import Any, Callable
-from collections import defaultdict
 
 from aqt import gui_hooks
+from aqt import mw as _mw
 from aqt.qt import QAction, qconnect
 from aqt.utils import current_window, tooltip
 from aqt.webview import AnkiWebView
 
-from .quick import QuickSelectMenu
-from .icons import IconHighlighter
+from .actions import (SCROLL_FACTOR, button_actions, release_actions,
+                      update_actions)
 from .config import ContankiConfig
-from .funcs import (
-    get_config,
-    get_custom_actions,
-    get_state,
-    move_mouse_build,
-    scroll_build,
-)
-from .utils import State, get_file, DEBUG, dbg
-from .overlay import ControlsOverlay
 from .controller import identify_controller
-from .profile import (
-    Profile,
-    get_profile,
-    find_profile,
-)
-from .actions import button_actions, release_actions, update_actions, SCROLL_FACTOR
-
-from aqt import mw as _mw
+from .funcs import (get_config, get_custom_actions, get_state,
+                    move_mouse_build, scroll_build)
+from .icons import IconHighlighter
+from .overlay import ControlsOverlay
+from .profile import Profile, find_profile, get_profile
+from .quick import QuickSelectMenu
+from .utils import DEBUG, State, dbg, get_file
 
 assert _mw is not None
 mw = _mw
@@ -81,7 +72,8 @@ class Contanki(AnkiWebView):
             qconnect(self.mock_item.triggered, lambda: self.eval("mock_controller()"))
             mw.form.menuTools.addAction(self.mock_item)
             self.setFixedSize(10, 10)
-            from .tests import run_tests  # pylint: disable=import-outside-toplevel
+            from .tests import \
+                run_tests  # pylint: disable=import-outside-toplevel
 
             run_tests()
         else:
@@ -240,7 +232,7 @@ class Contanki(AnkiWebView):
         elif (
             self.profile.controller.parent == "8BitDo Zero 2 (X Input)"
             and any(axes)
-            and not any(buttons[12:15]) 
+            and not any(buttons[12:15])
             and not any(buttons[8:10])
         ):
             buttons[12] = axes[1] < -0.5 or axes[3] < -0.5

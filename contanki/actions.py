@@ -3,10 +3,11 @@ Maps states to available actions and actions to functions.
 """
 
 from __future__ import annotations
+
 from functools import partial
 from typing import Any, Callable
 
-from aqt import mw, Qt
+from aqt import Qt, mw
 from aqt.utils import tooltip
 
 try:
@@ -14,35 +15,12 @@ try:
 except ImportError:
     is_mac = False
 
-from .funcs import (
-    undo,
-    redo,
-    back,
-    forward,
-    on_enter,
-    toggle_fullscreen,
-    change_volume,
-    key_press,
-    click_release,
-    previous_card_info,
-    card_info,
-    build_cycle_flag,
-    collapse_deck,
-    choose_deck,
-    scroll_build,
-    hide_cursor,
-    select,
-    click,
-    on_options,
-    _pass,
-    Ctrl,
-    Shift,
-    RightButton,
-    toggle_image_occlusion_masks,
-    zoom_in,
-    zoom_out,
-    reset_zoom,
-)
+from .funcs import (Ctrl, RightButton, Shift, _pass, back, build_cycle_flag,
+                    card_info, change_volume, choose_deck, click,
+                    click_release, collapse_deck, forward, hide_cursor,
+                    key_press, on_enter, on_options, previous_card_info, redo,
+                    reset_zoom, scroll_build, select, toggle_fullscreen,
+                    toggle_image_occlusion_masks, undo, zoom_in, zoom_out)
 
 assert mw is not None
 SCROLL_FACTOR = 50 if is_mac else 5

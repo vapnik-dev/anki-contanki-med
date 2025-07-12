@@ -1,25 +1,15 @@
 from __future__ import annotations
-from collections import defaultdict
 
-from os.path import dirname, abspath, join
+from collections import defaultdict
+from os.path import abspath, dirname, join
 from weakref import WeakSet
 
 from aqt import mw
-from aqt.qt import (
-    QFont,
-    QLabel,
-    QSizePolicy,
-    QWidget,
-    Qt,
-    QPixmap,
-    QPainter,
-    QColor,
-    QGraphicsColorizeEffect,
-)
+from aqt.qt import (QColor, QFont, QGraphicsColorizeEffect, QLabel, QPainter,
+                    QPixmap, QSizePolicy, Qt, QWidget)
 from aqt.utils import tooltip
 
 from .controller import Controller
-
 
 directions = [
     "Left",

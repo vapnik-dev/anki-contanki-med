@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from collections import defaultdict
 import json
 import os
 import re
+from collections import defaultdict
 from typing import Any
 
-from .utils import dbg, int_keys, get_file, user_files_path
+from .utils import dbg, get_file, int_keys, user_files_path
 
 
 def get_controller_data() -> dict[str, dict]:

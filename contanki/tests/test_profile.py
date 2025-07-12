@@ -1,24 +1,15 @@
 # pylint: disable=missing-docstring
 
-from os.path import join
 import shutil
+from os.path import join
 
 from ..controller import Controller
-from ..utils import user_files_path, user_profile_path, tests_path
-from . import test
-
 # pylint: disable=unused-import
-from ..profile import (
-    Profile,
-    get_profile,
-    get_profile_list,
-    copy_profile,
-    find_profile,
-    profile_is_valid,
-    rename_profile,
-    delete_profile,
-    update_assigned_profiles,
-)
+from ..profile import (Profile, copy_profile, delete_profile, find_profile,
+                       get_profile, get_profile_list, profile_is_valid,
+                       rename_profile, update_assigned_profiles)
+from ..utils import tests_path, user_files_path, user_profile_path
+from . import test
 
 
 @test
@@ -159,6 +150,7 @@ def test_profile_is_valid():
     assert not profile_is_valid("test2")
     delete_profile("test")
 
+
 toml = """\
 # Contanki Profile
 name = "8BitDo Pro"
@@ -224,6 +216,7 @@ review = ["Suspend Card", "Suspend Note", "Bury Card", "Bury Note", "Card Info"]
 0 = "Select"
 4 = "Escape"
 """
+
 
 @test
 def test_profile_to_from_toml():
