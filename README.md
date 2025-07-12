@@ -1,3 +1,7 @@
+# DISCLAIMER
+
+This is a fork of the original Contanki Addon, not the original. The Install code is for the original Addon.
+
 # Contanki: Controller Support for Anki
 
 Contanki is an add-on for [Anki](https://apps.ankiweb.net) which allows users to control Anki using a gamepad or other controller device. To install, visit [AnkiWeb](https://ankiweb.net/shared/info/1898790263) or use the install code 1898790263.
